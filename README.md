@@ -1,8 +1,8 @@
 # Projeto Web Chat da Disciplina - DCC704 - UFRR
-## Backend and Frontend com Nextjs - Nodejs - MongoDB e WebSockets
+## Nextjs - Nodejs - MongoDB e WebSockets
 
 ## Banco de Dados
-- Para rodar esse projeto dovê deve ter um Servidor de Banco de Dados rodando localmente ou ter acesso a um remoto
+- Necessário ter acesso a um servidor de Banco de Dados (local ou remoto)
 - Este projeto está pre configurado para o MongoDB (MONGO_URI)
 
 ## Variáveis de ambiente (criar)
