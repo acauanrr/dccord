@@ -12,11 +12,11 @@
 ```bash
 API_PORT=4001 
 MONGO_URI=mongodb://127.0.0.1:27017/dccord
-TOKEN_KEY=<cria_sua_chave>
+TOKEN_KEY=<your_key>
 ```
 
 ### Frontend /dccord
 .env.local
 ```bash
-JWT_SECRET=<cria_sua_chave>
+JWT_SECRET=<your_key>
 ```
