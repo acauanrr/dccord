@@ -11,20 +11,29 @@ import {
   VStack,
   Checkbox,
   Image,
+  HStack,
+  Link,
 } from "@chakra-ui/react";
+import NextLink from "next/link";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { signIn, getCsrfToken } from "next-auth/react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useRouter } from "next/router";
+import Alerts from "../components/_ui/Alerts";
 
-export default function Login({ csrfToken }) {
+export default function Login() {
   const router = useRouter();
-  const [error, setError] = useState(null);
+  const [type, setType] = useState("");
+  const [msg, setMsg] = useState("");
+
+  useEffect(() => {
+    setType(router.query.type);
+    setMsg(router.query.msg);
+  }, []);
 
   return (
     <Flex
-      bg="gray.100"
       align="center"
       justify="center"
       h="100vh"
@@ -34,7 +43,7 @@ export default function Login({ csrfToken }) {
         <Image src="/images/logo-full.png" alt="logo" />
       </Box>
 
-      <Box bg="white" p={6} rounded="md" w={64}>
+      <Box bg="white" p={6} rounded="md" w={300}>
         <Formik
           initialValues={{
             email: "",
@@ -49,9 +58,12 @@ export default function Login({ csrfToken }) {
               callbackUrl: `${window.location.origin}`,
             });
             if (res?.error) {
-              setError(res.error);
+              // setError("E-mail ou Senha inválidos");
+              setType("error");
+              setMsg("E-mail ou Senha inválidos");
             } else {
-              setError(null);
+              setType(null);
+              setMsg(null);
             }
             if (res.url) router.push("/chatpage");
             setSubmitting(false);
@@ -59,10 +71,10 @@ export default function Login({ csrfToken }) {
         >
           {({ handleSubmit, errors, touched }) => (
             <form onSubmit={handleSubmit}>
+              {msg && <Alerts type={type} msg={msg} />}
               <VStack spacing={4} align="flex-start">
-                {error && <FormErrorMessage>{error}</FormErrorMessage>}
                 <FormControl>
-                  <FormLabel htmlFor="email">Email Address</FormLabel>
+                  <FormLabel htmlFor="email">E-mail</FormLabel>
                   <Field
                     as={Input}
                     id="email"
@@ -91,17 +103,43 @@ export default function Login({ csrfToken }) {
                   />
                   <FormErrorMessage>{errors.password}</FormErrorMessage>
                 </FormControl>
-                <Field
-                  as={Checkbox}
-                  id="rememberMe"
-                  name="rememberMe"
-                  colorScheme="blue"
+                <Button
+                  type="submit"
+                  width="full"
+                  color="white"
+                  bg="brand.600"
+                  _hover={{ bg: "brand.700" }}
                 >
-                  <Text fontSize="xs">Remember me?</Text>
-                </Field>
-                <Button type="submit" colorScheme="blue" width="full">
-                  Login
+                  Entrar
                 </Button>
+                <HStack
+                  w="full"
+                  justifyContent="space-between"
+                  fontSize="sm"
+                  fontWeight="bold"
+                  color="cyan.400"
+                >
+                  <Box>
+                    <NextLink href="#" passHref>
+                      <Link
+                        textDecorationLine="none"
+                        _hover={{ color: "cyan.700" }}
+                      >
+                        Esqueceu a senha
+                      </Link>
+                    </NextLink>
+                  </Box>
+                  <Box>
+                    <NextLink href="/cadastro" passHref>
+                      <Link
+                        textDecorationLine="none"
+                        _hover={{ color: "cyan.700" }}
+                      >
+                        Cadastrar
+                      </Link>
+                    </NextLink>
+                  </Box>
+                </HStack>
               </VStack>
             </form>
           )}
@@ -109,13 +147,4 @@ export default function Login({ csrfToken }) {
       </Box>
     </Flex>
   );
-}
-
-// This is the recommended way for Next.js 9.3 or newer
-export async function getServerSideProps(context) {
-  return {
-    props: {
-      csrfToken: await getCsrfToken(context),
-    },
-  };
 }
