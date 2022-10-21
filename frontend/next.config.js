@@ -8,6 +8,11 @@ const nextConfig = {
     API_URI_LOCAL: "http://localhost:4001",
     API_URI_CLOUD: "https://dccord-api.vercel.app",
   },
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
 };
 
 module.exports = nextConfig;

@@ -21,10 +21,11 @@ import { useRouter } from "next/router";
 import Alerts from "../components/_ui/Alerts";
 import fetch from "unfetch";
 
-const API_URI =
+const newLocal =
   process.env.NODE_ENV === "production"
     ? process.env.API_URI_CLOUD
     : process.env.API_URI_LOCAL;
+const API_URI = newLocal;
 
 export default function Cadastro() {
   const router = useRouter();
