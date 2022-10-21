@@ -1,6 +1,8 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
+const API_URI = (process.env.NODE_ENV === "production" ? process.env.API_URI_CLOUD : process.env.API_URI_LOCAL)
+
 export default NextAuth({
   providers: [
     CredentialsProvider({
@@ -19,7 +21,7 @@ export default NextAuth({
           password: credentials.password,
         };
 
-        const res = await fetch("http://localhost:4001/login", {
+        const res = await fetch(`${API_URI}/login`, {
           method: "POST",
           body: JSON.stringify(payload),
           headers: {

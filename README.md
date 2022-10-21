@@ -3,7 +3,7 @@
 
 ## Banco de Dados
 - Necessário ter acesso a um servidor de Banco de Dados (local ou remoto)
-- Este projeto está pre configurado para o **MongoDB** (MONGO_URI)
+- Este projeto está pre configurado para o **MongoDB** (MONGO_URI OU MONGO_CLOUD_URI)
 
 ## Criar arquivos de variáveis de ambiente
 

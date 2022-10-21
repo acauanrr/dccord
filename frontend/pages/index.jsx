@@ -55,10 +55,9 @@ export default function Login() {
               redirect: false,
               email: values.email,
               password: values.password,
-              callbackUrl: `${window.location.origin}`,
+              // callbackUrl: `${window.location.origin}`,
             });
             if (res?.error) {
-              // setError("E-mail ou Senha inválidos");
               setType("error");
               setMsg("E-mail ou Senha inválidos");
             } else {

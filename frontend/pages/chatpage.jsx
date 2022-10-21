@@ -17,6 +17,11 @@ import fetch from "unfetch";
 
 const fetcher = (url) => fetch(url).then((r) => r.json());
 
+const API_URI =
+  process.env.NODE_ENV === "production"
+    ? process.env.API_URI_CLOUD
+    : process.env.API_URI_LOCAL;
+
 export default function ChatPage() {
   const router = useRouter();
   const { data: session } = useSession();
@@ -25,7 +30,7 @@ export default function ChatPage() {
 
   // Fetch Data
   const { data, error } = useSWR(
-    `http://localhost:4001/user/${emailUser}`,
+    `${API_URI}/user/${emailUser}`,
     fetcher
   );
   console.log(data);

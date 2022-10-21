@@ -21,17 +21,17 @@ import { useRouter } from "next/router";
 import Alerts from "../components/_ui/Alerts";
 import fetch from "unfetch";
 
+const API_URI =
+  process.env.NODE_ENV === "production"
+    ? process.env.API_URI_CLOUD
+    : process.env.API_URI_LOCAL;
+
 export default function Cadastro() {
   const router = useRouter();
   const [error, setError] = useState(null);
 
   return (
-    <Flex
-      align="center"
-      justify="center"
-      h="100vh"
-      flexDirection="column"
-    >
+    <Flex align="center" justify="center" h="100vh" flexDirection="column">
       <Box w={60} pb={5}>
         <Image src="/images/logo-full.png" alt="logo" />
       </Box>
@@ -54,7 +54,7 @@ export default function Cadastro() {
               password: values.password,
             };
 
-            fetch("http://localhost:4001/register", {
+            fetch(`${API_URI}/register`, {
               method: "POST",
               body: JSON.stringify(newUser),
               headers: { "Content-type": "application/json; charset=UTF-8" },
