@@ -14,14 +14,14 @@ git clone https://github.com/acauanrr/dccord.git
 cd dccord/
 ```
 
-1. ### /backend
+1. Crie as variávie de ambiente no **/backend**
 
 ```bash
 cd backend/
 touch .env
 ```
 
-2. Após criar o arquivo _.env_, cole as variáveis de ambiente fazendo as alterações necessárias:
+2. Após criar o arquivo _.env_, copie e cole as variáveis seguintes fazendo as alterações necessárias:
 
 ```bash
 API_PORT=4001
@@ -33,14 +33,14 @@ MONGO_CLOUD_URI=''
 > Pode-se gerar o **TOKEN_KEY** por <https://emn178.github.io/online-tools/sha256.html>
 > e configurar o banco de dados de maneira remota para obert o **MONGO_CLOUD_URI** em <https://cloud.mongodb.com/>
 
-3. Instale as dependências e suba o backend
+1. Estando na pasta /backend, instale as dependências e suba o serviço
 
 ```bash
 npm i
 npm run dev
 ```
 
-4. ### /frontend
+4. Configurando o **frontend**
 
 ```bash
 cd .. //*(volte para dccord/ )*
