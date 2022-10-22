@@ -17,7 +17,7 @@ MONGO_CLOUD_URI=<mongo_cloud_uri> (https://cloud.mongodb.com/)
 ```
 
 ### /frontend
-*.env.local*
+*As variáveis de ambiente a nesta versão do Nextjs ficam no arquivo*
 ```bash
-JWT_SECRET=<your_key>
+next.config.js
 ```
