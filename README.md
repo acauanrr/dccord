@@ -1,8 +1,8 @@
 # Projeto Web Chat da Disciplina - DCC704 - UFRR
 ### Frameworks utilizados:
-- Nextjs <img src="https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png" width="32" height="32" />
-- Nodejs
-- MongoDB
+Nextjs | Nodejs | MongoDB
+:------: | :------: | :------:
+<img src="https://static-00.iconduck.com/assets.00/next-js-icon-512x512-zuauazrk.png" width="32" height="32" /> | Valor | Valor
 
 
 ## Pré-requisitos
