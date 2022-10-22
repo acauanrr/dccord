@@ -35,9 +35,10 @@ export default function Login() {
   return (
     <Flex
       align="center"
-      justify="center"
+      justify="start"
       h="100vh"
       flexDirection="column"
+      pt={20}
     >
       <Box w={60} pb={5}>
         <Image src="/images/logo-full.png" alt="logo" />

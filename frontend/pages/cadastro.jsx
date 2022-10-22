@@ -32,7 +32,13 @@ export default function Cadastro() {
   const [error, setError] = useState(null);
 
   return (
-    <Flex align="center" justify="center" h="100vh" flexDirection="column">
+    <Flex
+      align="center"
+      justify="start"
+      h="100vh"
+      flexDirection="column"
+      pt={20}
+    >
       <Box w={60} pb={5}>
         <Image src="/images/logo-full.png" alt="logo" />
       </Box>
