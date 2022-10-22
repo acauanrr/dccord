@@ -33,7 +33,7 @@ MONGO_CLOUD_URI=''
 > Pode-se gerar o **TOKEN_KEY** em: <https://emn178.github.io/online-tools/sha256.html>,
 > e configurar o banco de dados de maneira remota para obter o **MONGO_CLOUD_URI** em: <https://cloud.mongodb.com/>.
 
-1. Na pasta /backend, instale as dependências e suba o serviço:
+3. Na pasta /backend, instale as dependências e suba o serviço:
 
 ```bash
 npm i
@@ -60,7 +60,7 @@ npm i
 npm run dev
 ```
 
-8.  Abra o navegador e acesse o sistema:
+7.  Abra o navegador e acesse o sistema:
 
 ```bash
 http://localhost:3000/
