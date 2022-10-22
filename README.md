@@ -4,8 +4,8 @@
 
 ## Pré-requisitos
 
-- Necessário ter acesso a um servidor de Banco de Dados, o projeto está precondigurado para **MongoDB** (local ou cloud)
-- Node.js instalado em sua versão atualizada LTS
+- Ter acesso a um servidor de **Banco de Dados**. O projeto está configurado para **MongoDB** (local ou cloud)
+- **Node.js** instalado em sua versão mais recente LTS.
 
 ## Passo a passo (para linux)
 
