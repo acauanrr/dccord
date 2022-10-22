@@ -14,7 +14,7 @@ git clone https://github.com/acauanrr/dccord.git
 cd dccord/
 ```
 
-1. Crie as variávie de ambiente no **/backend**
+1. Crie as variáveis de ambiente no **/backend**:
 
 ```bash
 cd backend/
@@ -30,20 +30,20 @@ TOKEN_KEY=''
 MONGO_CLOUD_URI=''
 ```
 
-> Pode-se gerar o **TOKEN_KEY** por <https://emn178.github.io/online-tools/sha256.html>
-> e configurar o banco de dados de maneira remota para obert o **MONGO_CLOUD_URI** em <https://cloud.mongodb.com/>
+> Pode-se gerar o **TOKEN_KEY** em: <https://emn178.github.io/online-tools/sha256.html>,
+> e configurar o banco de dados de maneira remota para obter o **MONGO_CLOUD_URI** em: <https://cloud.mongodb.com/>.
 
-1. Estando na pasta /backend, instale as dependências e suba o serviço
+1. Na pasta /backend, instale as dependências e suba o serviço:
 
 ```bash
 npm i
 npm run dev
 ```
 
-4. Configurando o **frontend**
+4. Configurando o **frontend**, retorne um nível e entre na pasta do frontend/:
 
 ```bash
-cd .. //*(volte para dccord/ )*
+cd ..
 cd frontend/
 ```
 
@@ -53,14 +53,14 @@ cd frontend/
 next.config.js
 ```
 
-6. Instale as dependências e suba o frontend
+6. Instale as dependências e suba o front:
 
 ```bash
 npm i
 npm run dev
 ```
 
-8.  Abra o navegador e acesse o sistema
+8.  Abra o navegador e acesse o sistema:
 
 ```bash
 [localhost:3000](http://localhost:3000/)
