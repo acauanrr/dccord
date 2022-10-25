@@ -64,7 +64,11 @@ export default function Cadastro() {
             fetch(`${API_URI}/register`, {
               method: "POST",
               body: JSON.stringify(newUser),
-              headers: { "Content-type": "application/json; charset=UTF-8" },
+              headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                "Access-Control-Allow-Origin": "http://localhost:3000",
+                "Access-Control-Allow-Credentials": "true",
+              },
             })
               .then((response) => response.json())
               .then((json) => {
